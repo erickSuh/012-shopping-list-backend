@@ -1,6 +1,6 @@
-import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+import { QueryRunner, Table } from 'typeorm';
 
-export class CreateListsTable1704412800000 implements MigrationInterface {
+export class CreateListsTable1704412800000 {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({

@@ -7,7 +7,6 @@ import {
   ManyToOne,
   JoinColumn,
 } from 'typeorm';
-import { List } from '../lists/list.entity';
 
 @Entity('items')
 export class Item {
@@ -35,7 +34,7 @@ export class Item {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @ManyToOne(() => List, (list) => list.items)
+  @ManyToOne('List', 'items')
   @JoinColumn({ name: 'listId' })
-  list: List;
+  list: any;
 }

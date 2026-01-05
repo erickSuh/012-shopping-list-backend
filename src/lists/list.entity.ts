@@ -6,7 +6,6 @@ import {
   UpdateDateColumn,
   OneToMany,
 } from 'typeorm';
-import { Item } from '../items/item.entity';
 
 @Entity('lists')
 export class List {
@@ -25,9 +24,9 @@ export class List {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @OneToMany(() => Item, (item) => item.list, {
+  @OneToMany('Item', 'list', {
     cascade: true,
     onDelete: 'CASCADE',
   })
-  items: Item[];
+  items: any[];
 }

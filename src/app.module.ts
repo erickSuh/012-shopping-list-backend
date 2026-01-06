@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ListModule } from './lists/lists.module';
 import { ItemModule } from './items/items.module';
+import { AuthModule } from './auth/auth.module';
 import { List } from './lists/list.entity';
 import { Item } from './items/item.entity';
 
@@ -22,6 +23,7 @@ import { Item } from './items/item.entity';
       ssl:
         process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false,
     }),
+    AuthModule,
     ListModule,
     ItemModule,
   ],
